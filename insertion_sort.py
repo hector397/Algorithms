@@ -1,7 +1,7 @@
 from typing import *
 
 
-def insertion_sort(array: List) -> None:
+def insertion_sort_increasing_order(array: List) -> None:
     """
     Sort an array in increasing order
 
@@ -9,12 +9,32 @@ def insertion_sort(array: List) -> None:
          array: List of integers
     """
 
-    for j in range(2, len(array)):
+    for j in range(1, len(array)):
         key = array[j]
 
         i = j - 1
 
-        while i > 0 and array[i] < key:
+        while i >= 0 and array[i] > key:
+            array[i + 1] = array[i]
+            i -= 1
+
+        array[i + 1] = key
+
+
+def insertion_sort_decreasing_order(array: List) -> None:
+    """
+    Sort an array in decreasing order
+
+    Parameters:
+         array: List of integers
+    """
+
+    for j in range(1, len(array)):
+        key = array[j]
+
+        i = j - 1
+
+        while i >= 0 and array[i] < key:
             array[i + 1] = array[i]
             i -= 1
 
