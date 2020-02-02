@@ -1,16 +1,24 @@
 from typing import *
-import timeit
 
-"""
-Finds the maximum subarray in an array using brute force
-"""
+
 def brute_force_maximum_subarray(array: List, low: int, high: int) -> Tuple:
+    """
+    Finds the maximum subarray in an array using brute force
+
+    Parameters:
+        array: list of elements
+        low: start index of subarray
+        high: end index of subarray
+    Returns:
+        Tuple with the starting and ending index of subarray, and its value
+    """
+
     if len(array) == 0:
         return low, high, 0
     else:
         left = low
         right = high
-        maxSum = array[0]
+        max_sum = array[0]
 
         for i in range(high):
             sum = 0
@@ -18,18 +26,26 @@ def brute_force_maximum_subarray(array: List, low: int, high: int) -> Tuple:
             for j in range(i, high):
                 sum += array[j]
 
-                if sum > maxSum:
-                    maxSum = sum
+                if sum > max_sum:
+                    max_sum = sum
                     left = i
                     right = j
 
-        return left, right, maxSum
+        return left, right, max_sum
 
 
-"""
-Finds maximum subarray in an array using recursivity
-"""
 def recursive_maximum_subarray(array: List, low: int, high: int) -> Tuple:
+    """
+        Finds the maximum subarray in an array using recursivity
+
+        Parameters:
+            array: list of elements
+            low: start index of subarray
+            high: end index of subarray
+        Returns:
+            Tuple with the starting and ending index of subarray, and its value
+    """
+
     if len(array) == 0:
         return low, high, 0
     elif high == low:
@@ -49,10 +65,19 @@ def recursive_maximum_subarray(array: List, low: int, high: int) -> Tuple:
             return cross_low, cross_high, cross_sum
 
 
-"""
-Find maximum subarray crossing the midpoint
-"""
 def find_max_crossing_subarray(array: List, low: int, mid: int, high: int) -> Tuple:
+    """
+    Finds maximum subarray crossing the midpoint
+
+    Parameters:
+        array: list of elements
+        low: start index of subarray
+        mid:
+        high: end index of subarray
+    Returns:
+        Tuple with the starting and ending index of subarray, and its value
+    """
+
     left_sum = -50000
     sum = 0
 

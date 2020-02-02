@@ -1,38 +1,42 @@
 import unittest
 import maximum_subarray
 
+
 class TestMaximumSubarray(unittest.TestCase):
 
-    """
-    Test if the subarray is correct using the brute-force method
-    """
     def test__brute_force_maximum_subarray(self):
-      array = [4, -5, 1, 2, 8, -2, 4, 6, 0, 7, -1]
-      left, right, sum = 2, 9, 26
+        """
+        Test if the subarray is correct using the brute-force method
+        """
 
-      result_left, result_right, result_sum = maximum_subarray.brute_force_maximum_subarray(array, 0, len(array))
+        array = [4, -5, 1, 2, 8, -2, 4, 6, 0, 7, -1]
+        left, right, sum = 2, 9, 26
 
-      self.assertEqual(left, result_left, "Left bound incorrect")
-      self.assertEqual(right, result_right, "Right bound incorrect")
-      self.assertEqual(sum, result_sum, "Sum incorrect")
+        result_left, result_right, result_sum = maximum_subarray.brute_force_maximum_subarray(array, 0, len(array))
 
-    """
-    Test if the subarray is correct using the brute-force method when the array size is 1
-    """
+        self.assertEqual(left, result_left, "Left bound incorrect")
+        self.assertEqual(right, result_right, "Right bound incorrect")
+        self.assertEqual(sum, result_sum, "Sum incorrect")
+
     def test_brute_force_maximum_subarray_size_1(self):
-      array = [4]
-      left, right, sum = 0, 0, 4
+        """
+        Test if the subarray is correct using the brute-force method when the array size is 1
+        """
 
-      result_left, result_right, result_sum = maximum_subarray.brute_force_maximum_subarray(array, 0, 0)
+        array = [4]
+        left, right, sum = 0, 0, 4
 
-      self.assertEqual(left, result_left, "Left bound incorrect")
-      self.assertEqual(right, result_right, "Right bound incorrect")
-      self.assertEqual(sum, result_sum, "Sum incorrect")
+        result_left, result_right, result_sum = maximum_subarray.brute_force_maximum_subarray(array, 0, 0)
 
-    """
-    Test if the subarray is correct usin the brute-force method when the array is empty
-    """
+        self.assertEqual(left, result_left, "Left bound incorrect")
+        self.assertEqual(right, result_right, "Right bound incorrect")
+        self.assertEqual(sum, result_sum, "Sum incorrect")
+
     def test_brute_force_maximum_subarray_empty(self):
+        """
+        Test if the subarray is correct usin the brute-force method when the array is empty
+        """
+
         array = []
         left, right, sum = 0, 0, 0
 
@@ -42,10 +46,10 @@ class TestMaximumSubarray(unittest.TestCase):
         self.assertEqual(right, result_right, "Right bound incorrect")
         self.assertEqual(sum, result_sum, "Sum incorrect")
 
-    """
-    Test if the maximum crossing subarray is correct
-    """
     def test_maximum_crossing_subarray(self):
+        """
+        Test if the maximum crossing subarray is correct
+        """
         array = [13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7]
         left, right, sum = 7, 10, 43
 
@@ -55,10 +59,11 @@ class TestMaximumSubarray(unittest.TestCase):
         self.assertEqual(right, result_right, "Right bound incorrect")
         self.assertEqual(sum, result_sum, "Sum incorrect")
 
-    """
-    Test if the maximum subarray using recursivity is correct
-    """
     def test_recursive_maximum_subarray(self):
+        """
+        Test if the maximum subarray using recursivity is correct
+        """
+
         array = [4, -5, 1, 2, 8, -2, 4, 6, 0, 7, -1]
         left, right, sum = 2, 9, 26
 
@@ -68,10 +73,11 @@ class TestMaximumSubarray(unittest.TestCase):
         self.assertEqual(right, result_right, "Right bound incorrect")
         self.assertEqual(sum, result_sum, "Sum incorrect")
 
-    """
-    Test if the subarray is correct using the recursive method when the array size is 1
-    """
     def test_recursive_maximum_subarray_size_1(self):
+        """
+        Test if the subarray is correct using the recursive method when the array size is 1
+        """
+
         array = [4]
         left, right, sum = 0, 0, 4
 
@@ -81,10 +87,11 @@ class TestMaximumSubarray(unittest.TestCase):
         self.assertEqual(right, result_right, "Right bound incorrect")
         self.assertEqual(sum, result_sum, "Sum incorrect")
 
-    """
-    Test if the subarray is correct usin the recursive method when the array is empty
-    """
     def test_recursive_maximum_subarray_empty(self):
+        """
+        Test if the subarray is correct usin the recursive method when the array is empty
+        """
+
         array = []
         left, right, sum = 0, 0, 0
 
@@ -94,5 +101,6 @@ class TestMaximumSubarray(unittest.TestCase):
         self.assertEqual(right, result_right, "Right bound incorrect")
         self.assertEqual(sum, result_sum, "Sum incorrect")
 
+
 if __name__ == '__main__':
-  unittest.main()
+    unittest.main()
